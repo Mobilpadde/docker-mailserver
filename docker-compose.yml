@@ -25,6 +25,8 @@ services:
     restart: always
     stop_grace_period: 1m
     environment:
+      # https://docker-mailserver.github.io/docker-mailserver/v11.2/faq/#how-can-i-sync-container-with-host-datetime-timezone
+      - TZ=Europe/Berlin
       - ENABLE_FAIL2BAN=1
       # Allow sending emails from other docker containers
       # Beware creating an Open Relay: https://docker-mailserver.github.io/docker-mailserver/edge/config/environment/#permit_docker
